@@ -1,0 +1,70 @@
+@import 'media-queries';
+@import 'colors';
+
+.align_center{
+    display: flex;
+    align-items: center;
+}
+.navbar {
+	background-color: #f7f7f7;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding:0.5rem calc((100vw - 1200px)/2);
+	height: 88px;
+    position: relative;
+
+    &__logo{
+        text-decoration: none;
+        color: $dark;
+        font-size: 2rem;
+        margin-left: 24px;
+        @extend .align_center;
+    }
+    &__bars{
+        opacity: 0;
+        @include tablet{
+            opacity: 1;
+            position: absolute;
+            right: 24px;
+            top: 22px;
+            font-size: 2rem;
+        }
+    }
+    &__menu{
+        @extend .align_center;
+        margin-right: 24px;
+        text-align: center;
+        @include tablet{
+            display: none;
+        }
+
+        &__links{
+            text-decoration: none;
+            @extend .align_center;
+            justify-content: center;
+            color: $dark;
+            padding: 0 1rem;
+
+            &:hover{
+                color: $line;
+                transition: all 0.3s ease;
+            }
+        }
+        #Signup-btn{
+            padding: 12px 24px;
+            color: $light;
+            margin-left: 16px;
+            background-color: $line;
+            border-radius: 4px;
+            
+            &:hover{
+                background-color: $orangered;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+}

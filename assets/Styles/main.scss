@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+@import 'navbar';
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+// Banner Section css
+.hero{
+    background-color: $light;
+
+    &__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+        // padding: 0 24px;
+        z-index: 1;
+
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+
+        &__left{
+            padding: 5rem 0;
+            h1{
+                color:$line;
+                font-size: 4rem;
+                margin: 0;
+                @include tablet{
+                    font-size: 2rem;
+                }
+            }
+            h2{
+                color: $dark;
+                font-size: 4rem;
+                margin: 15px 0;
+                @include tablet{
+                    font-size: 2rem;
+                }
+            }
+            p{
+                color: $dark;
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 0;
+                @include tablet{
+                    font-size: 1.5rem;
+                }
+            }
+            .hero__contaier__btn{
+                padding: 12px 24px;
+                cursor: pointer;
+                background-color: $line;
+                color: $dark;
+                border-radius: 4px;
+                border: none;
+                outline: none;
+                z-index: 2;
+                position: relative;
+                margin-top: 15px;
+
+                &::after{
+                    position: absolute;
+                    content: "";
+                    width:0;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    border-radius: 4px;
+                    z-index: -1;
+                }
+
+                &:hover::after{
+                    background-color:$orangered;
+                    width: 100%;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        &__right{
+            text-align: center;
+
+            img{
+                height: 90vh;
+                width: 100%;
+                
+                @include tablet{
+                    height: 50vh;
+                }
+            }
+        }
+    }
+}
+
+
+  
